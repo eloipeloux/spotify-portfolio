@@ -14,12 +14,12 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="https://nextjs.org">Dev Branch!</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
+          You&apos;re now on the dev branch from the original gitflow. This is the 
+          <code className={styles.code}>pages/index.tsx</code> file.
         </p>
 
         <div className={styles.grid}>
