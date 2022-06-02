@@ -11,7 +11,10 @@ export type FormState = {
 };
 
 export type Song = {
+    id: string;
     songUrl: string;
+    preview: string;
+    image: string;
     artist: string;
     title: string;
 };
