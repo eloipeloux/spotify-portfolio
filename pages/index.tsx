@@ -1,11 +1,15 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
+import NowPlaying from '../components/nowPlaying'
+import Tracks from '../components/TopTracks'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container + ' font-satoshi'}>
+      <Header />
       <Head>
         <title>Portfolio Eloi</title>
         <meta name="description" content="Musical portfolio for Eloi PELOUX" />
@@ -13,58 +17,24 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className="font-bold text-9xl text-center">
+        {/* Remove font-satoshi from className for different font */}
+        <h1 className="font-satoshi font-bold text-7xl text-left sm:text-center sm:text-9xl mb-5">
           Welcome to my personnal portfolio!
         </h1>
 
-        <p className={styles.description}>
-          You&apos;re now on the dev branch from the original gitflow. This is the 
-          <code className={styles.code}>pages/index.tsx</code> file.
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <h3 className='font-satoshi text-3xl text-left sm:text-center sm:text-5xl mt-5'>
+          Here are some tunes I&apos;m jamming to ...
+          <p className='text-xl text-left sm:text-center sm:text-3xl mt-5'>
+            Let&apos;s get into my top 15 (because why not ?)
+          </p>
+        </h3>
+        <Tracks />
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <p className='font-satoshi text-lg text-center mb-5'>
+        Are you curious ? Check what I&apos;m currently listening to
+      </p>
+      <NowPlaying />
+      <Footer />
     </div>
   )
 }

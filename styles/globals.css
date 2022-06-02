@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --green: #1DB954;
+}
+
+@font-face {
+  font-family: Satoshi;
+  src: url('../fonts/Satoshi-Regular.otf');
+}
+
 html,
 body {
   padding: 0;
@@ -9,4 +18,6 @@ body {
   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Arial, Helvetica, sans-serif;
   line-height: 1.1;
   letter-spacing: 0em;
+  background-color: #191414;
+  color: white;
 }
