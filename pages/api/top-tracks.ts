@@ -9,9 +9,9 @@ export default async function handler(
     const { items } = await response.json();
 
     // Top 15 fav songs
-    const tracks = items.slice(0, 15).map((track) => ({
+    const tracks = items.slice(0, 15).map((track:any) => ({
         id: track.id,
-        artist: track.artists.map((_artist) => _artist.name).join(', '),
+        artist: track.artists.map((_artist:any) => _artist.name).join(', '),
         songUrl: track.external_urls.spotify,
         title: track.name,
         image: track.album.images[0].url,

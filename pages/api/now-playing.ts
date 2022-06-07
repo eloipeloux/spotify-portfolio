@@ -19,7 +19,7 @@ export default async function handler(
 
     const isPlaying = song.is_playing;
     const title = song.item.name;
-    const artist = song.item.artists.map((_artist) => _artist.name).join(', ');
+    const artist = song.item.artists.map((_artist:any) => _artist.name).join(', ');
     const songUrl = song.item.external_urls.spotify;
 
     res.setHeader(
