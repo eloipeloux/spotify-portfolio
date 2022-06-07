@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
-import NowPlaying from '../components/nowPlaying'
+import NowPlaying from '../components/NowPlaying'
 import TopTracks from '../components/TopTracks'
 import styles from '../styles/Home.module.css'
 
