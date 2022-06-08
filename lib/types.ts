@@ -17,15 +17,7 @@ export type Track = {
     album: Album;
     artists: Artist[];
     name: string;
-};
-
-export type NowPlayingSong = {
-    album: string;
-    albumImageUrl: string;
-    artist: string;
-    isPlaying: boolean;
-    songUrl: string;
-    title: string;
+    is_playing?: boolean;
 };
 
 export type ExternalUrl = {
@@ -49,6 +41,13 @@ export type LightTrack = {
     artist: string;
     songUrl: string;
     title: string;
-    image: string;
-    preview: string;
+    image?: string;
+    preview?: string;
+    isPlaying?: boolean;
+}
+
+export type CurrentSong = Track | Error;
+
+export const isTrack = (t: CurrentSong): t is Track => {
+    return (t as Track).id !== undefined;
 }

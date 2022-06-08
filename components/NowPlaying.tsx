@@ -1,12 +1,12 @@
 import useSWR from 'swr';
 
 import fetcher from '../lib/fetcher';
-import { NowPlayingSong } from '../lib/types';
+import { LightTrack } from '../lib/types';
 import AnimatedBars from './AnimatedBars';
 
 
 const NowPlaying: React.FC = () => {
-    const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher)
+    const { data } = useSWR<LightTrack>('/api/now-playing', fetcher)
 
     return (
         <div className="flex flex-row items-center sm:mb-8 space-x-0 sm:space-x-2 justify-center">

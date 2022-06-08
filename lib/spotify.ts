@@ -28,11 +28,25 @@ const getAccessToken = async () => {
 export const getNowPlaying = async () => {
     const { access_token } = await getAccessToken();
 
-    return fetch(NOW_PLAYING_ENDPOINT, {
+    const response = await fetch(NOW_PLAYING_ENDPOINT, {
         headers: {
             Authorization: `Bearer ${access_token}`
         }
     });
+
+    try {
+        const song = (await response.json()).item;
+        song.is_playing = true;
+
+        if(response.status === 204 || response.status > 400) {
+            song.is_playing = false;
+        }
+
+        return song as Track;
+    } catch (e) {
+            // console.log('ERROR -',e)
+            return e as Error;
+    }
 };
 
 export const getTopTracks = async () => {

@@ -15,7 +15,7 @@ function cn(...classes: string[]) {
 
 // Inspo function https://dev.to/haydenbleasel/creating-a-no-auth-spotify-playlist-preview-with-nextjs-3dk1
 
-const BlurImage: React.FC<{key: string, track: LightTrack}> = ({key, track}) => {
+const BlurImage: React.FC<{id: string, track: LightTrack}> = ({id, track}) => {
 
     const [isLoading, setLoading] = useState(true)
 
@@ -116,7 +116,7 @@ const BlurImage: React.FC<{key: string, track: LightTrack}> = ({key, track}) => 
             <div className="w-full aspect-w-1 aspect-h-1 overflow-hidden xl:aspect-w-7 xl:aspect-h-8 d-block rounded-lg">
                 <Image
                     alt=""
-                    src={track.image}
+                    src={track.image!}
                     layout="responsive"
                     className={cn(
                         'group-hover:opacity-75 duration-700 ease-in-out',
