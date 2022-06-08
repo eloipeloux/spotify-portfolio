@@ -10,13 +10,13 @@ export type FormState = {
     message?: string;
 };
 
-export type Song = {
+export type Track = {
     id: string;
-    songUrl: string;
-    preview: string;
-    image: string;
-    artist: string;
-    title: string;
+    external_urls: ExternalUrl; // add nullable
+    preview_url: string;
+    album: Album;
+    artists: Artist[];
+    name: string;
 };
 
 export type NowPlayingSong = {
@@ -28,6 +28,27 @@ export type NowPlayingSong = {
     title: string;
 };
 
-export type TopTracks = {
-    tracks: Song[];
-};
+export type ExternalUrl = {
+    spotify: string;
+}
+
+export type Artist = {
+    name: string;
+}
+
+export type Album = {
+    images: Cover[];
+}
+
+export type Cover = {
+    url: string;
+}
+
+export type LightTrack = {
+    id: string;
+    artist: string;
+    songUrl: string;
+    title: string;
+    image: string;
+    preview: string;
+}

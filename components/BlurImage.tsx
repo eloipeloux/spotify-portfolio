@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { createGlobalState } from 'react-hooks-global-state'
 import toast from 'react-hot-toast';
-import { Song } from '../lib/types';
+import { LightTrack } from '../lib/types';
 
 const { useGlobalState } = createGlobalState({
     interactableNotified: false,
@@ -15,7 +15,8 @@ function cn(...classes: string[]) {
 
 // Inspo function https://dev.to/haydenbleasel/creating-a-no-auth-spotify-playlist-preview-with-nextjs-3dk1
 
-const BlurImage: React.FC<{key: string, track: Song}> = ({key, track}) => {
+const BlurImage: React.FC<{key: string, track: LightTrack}> = ({key, track}) => {
+
     const [isLoading, setLoading] = useState(true)
 
     const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
@@ -111,7 +112,7 @@ const BlurImage: React.FC<{key: string, track: Song}> = ({key, track}) => {
     };
 
     return (
-        <a href={track?.songUrl} target="_blank" rel="noreferrer" className="group">
+        <a href={track.songUrl} target="_blank" rel="noreferrer" className="group">
             <div className="w-full aspect-w-1 aspect-h-1 overflow-hidden xl:aspect-w-7 xl:aspect-h-8 d-block rounded-lg">
                 <Image
                     alt=""
