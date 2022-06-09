@@ -2,8 +2,9 @@ import { NextPage } from "next";
 import NowPlaying from "../components/NowPlaying";
 import TopTracks from "../components/TopTracks";
 import styles from '../styles/Home.module.css'
+import AllPlaylists from "../components/AllPlaylists";
 
-const Home: NextPage = () => {
+const HomePage: NextPage = () => {
     return (
         <div>
             <main className={styles.main}>
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
                     </p>
                 </h3>
                 <TopTracks />
+                <AllPlaylists />
             </main>
             <p className='font-satoshi text-lg text-center mb-5'>
                 Are you curious ? Check what I&apos;m currently listening to
@@ -28,4 +30,4 @@ const Home: NextPage = () => {
     );
 }
 
-export default Home
+export default HomePage

@@ -8,6 +8,10 @@ export default async function handler(
 ) {
     const topTracks = await getTopTracks();
 
+    if(topTracks instanceof Error) {
+        return res.status(500).json(topTracks.message);
+    }
+
     // Top 15 fav songs
     const tracks: LightTrack[] = topTracks.slice(0, 15).map((track) => ({
         id: track.id,

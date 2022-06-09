@@ -13,7 +13,7 @@ export type FormState = {
 export type Track = {
     id: string;
     external_urls: ExternalUrl; // add nullable
-    preview_url: string;
+    preview_url?: string;
     album: Album;
     artists: Artist[];
     name: string;
@@ -46,8 +46,23 @@ export type LightTrack = {
     isPlaying?: boolean;
 }
 
-export type CurrentSong = Track | Error;
+export type Playlist = {
+    id: string;
+    images: Cover[];
+    name: string;
+    external_urls: ExternalUrl;
+    tracks: PlaylistTrack;
+}
 
-export const isTrack = (t: CurrentSong): t is Track => {
-    return (t as Track).id !== undefined;
+export type LightPlaylist = {
+    id: string;
+    image: string;
+    name: string;
+    url: string;
+    tracks: number;
+}
+
+export type PlaylistTrack = {
+    href: string;
+    total: number;
 }

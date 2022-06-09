@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import useSWR from 'swr';
 
 import fetcher from '../lib/fetcher';
@@ -7,6 +8,10 @@ import AnimatedBars from './AnimatedBars';
 
 const NowPlaying: React.FC = () => {
     const { data } = useSWR<LightTrack>('/api/now-playing', fetcher)
+    // console.log(data);
+    // if(!data) {
+    //     return null;
+    // }
 
     return (
         <div className="flex flex-row items-center sm:mb-8 space-x-0 sm:space-x-2 justify-center">
