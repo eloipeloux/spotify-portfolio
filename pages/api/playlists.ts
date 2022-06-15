@@ -14,7 +14,7 @@ export default async function handler(
     );
 
     if (playlistsData instanceof Error) {
-        // console.log('ERROR PLAYLIST - ', song);
+        console.log('ERROR PLAYLIST - ', playlistsData);
         return res.status(500).json(playlistsData);
     }
 

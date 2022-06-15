@@ -15,7 +15,7 @@ function cn(...classes: string[]) {
 
 // Inspo function https://dev.to/haydenbleasel/creating-a-no-auth-spotify-playlist-preview-with-nextjs-3dk1
 
-const BlurImage: React.FC<{id: string, track: LightTrack}> = ({id, track}) => {
+const BlurImage: React.FC<{ id: string, track: LightTrack }> = ({ id, track }) => {
 
     const [isLoading, setLoading] = useState(true)
 

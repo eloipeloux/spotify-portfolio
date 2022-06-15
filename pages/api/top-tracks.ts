@@ -8,8 +8,14 @@ export default async function handler(
 ) {
     const topTracks = await getTopTracks();
 
+    res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=86400, stale-while-revalidate=43200'
+    );
+
     if(topTracks instanceof Error) {
-        return res.status(500).json(topTracks.message);
+        console.log('ERROR TOPRACKS - ', topTracks)
+        return res.status(500).json(topTracks);
     }
 
     // Top 15 fav songs
@@ -21,11 +27,6 @@ export default async function handler(
         image: track.album.images[0].url,
         preview: track.preview_url
     }));
-
-    res.setHeader(
-        'Cache-Control',
-        'public, s-maxage=86400, stale-while-revalidate=43200'
-    );
 
     return res.status(200).json(tracks);
 }

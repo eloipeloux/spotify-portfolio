@@ -12,12 +12,14 @@ import "swiper/css/effect-cards";
 const AllPlaylists: React.FC = () => {
     const { data } = useSWR<LightPlaylist[]>('/api/playlists', fetcher);
 
-    if (!data) {
-        return null;
-    }
+    // console.log('PLAYLISTS DATA -- ', typeof data)
+    // if (!data) {
+    //     toast.error('Oops ... An error occured while trying to get the playlists !');
+    //     return null;
+    // }
 
     return (
-        <div>
+        <div className='pb-16'>
             <p className='text-xl text-center sm:text-3xl mb-10'>
                 What about my playlists ? Let&apos;s find out !
             </p>
@@ -27,8 +29,8 @@ const AllPlaylists: React.FC = () => {
                 modules={[EffectCards]}
                 className="mySwiper h-auto w-auto"
             >
-                {data.map((playlist) => (
-                    <SwiperSlide key={playlist.id}>
+                {data?.map((playlist) => (
+                    <SwiperSlide key={playlist.id} className='justify-items-center'>
                         <Playlist id={playlist.id} playlist={playlist} />
                     </SwiperSlide>
                 ))}

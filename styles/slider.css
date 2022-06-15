@@ -1,13 +1,21 @@
 .swiper {
-    width: 240px;
-    height: 240px;
+    width: 250px;
+    height: 250px;
+    background-color: transparent !important;
 }
 
 .swiper-slide {
     display: grid;
+    /* remove grid if no text displayed */
     align-items: center;
     justify-content: center;
     font-size: 22px;
     font-weight: bold;
     color: #fff;
+}
+
+.swiper-slide, .swiper-slide-prev, .swiper-slide-next, .swiper-slide-shadow {
+    background-color: transparent !important;
+    background:none !important;
+    box-shadow: none !important;
 }

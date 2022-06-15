@@ -1,14 +1,14 @@
 import { NextPage } from "next";
 import Container from "../components/Container";
 
-const Experiences: NextPage = () => {
+const Tastes: NextPage = () => {
     return (
-        <Container title='My experiences'>
+        <Container title='My musical tastes'>
             <h1 className="text-7xl text-left sm:text-9xl sm:text-center">
-                My Experiences
+                My musical tastes
             </h1>
         </Container>
-    );
+    )
 }
 
-export default Experiences
+export default Tastes

@@ -8,8 +8,9 @@ import AnimatedBars from './AnimatedBars';
 
 const NowPlaying: React.FC = () => {
     const { data } = useSWR<LightTrack>('/api/now-playing', fetcher)
-    // console.log(data);
-    // if(!data) {
+
+    // if (!data) {
+    //     toast.error('Oops ... An error occured while trying to get the playlists !');
     //     return null;
     // }
 

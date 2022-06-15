@@ -14,9 +14,8 @@ export default async function handler(
     );
 
     if (song instanceof Error) {
-        // console.log('ERROR NOWPLAYING - ', song);
+        console.log('ERROR NOWPLAYING - ', song);
         return res.status(500).json(song);
-        // return res.json(song);
     }
 
     const nowPlaying: LightTrack = {
